@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Fall Detect View Controller-->
         <scene sceneID="n0U-d4-Z24">
             <objects>
-                <viewController id="OVv-Lx-vYh" sceneMemberID="viewController">
+                <viewController id="OVv-Lx-vYh" customClass="FallDetectViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nbH-f5-ZR5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,5 +113,113 @@
             </objects>
             <point key="canvasLocation" x="597" y="-243"/>
         </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="kEW-83-lFA">
+            <objects>
+                <viewController storyboardIdentifier="IntroVC" id="e9U-2r-wyc" customClass="IntroViewController" customModule="Fall_Detection_Alert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MtY-nN-1Qt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-fY-bPg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2I4-a5-3rm">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="681.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="42x-vk-eIk">
+                                                <rect key="frame" x="20" y="70" width="374" height="320"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fall02" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-um-yDn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="KEl-C8-Xj6"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbN-EQ-eV2">
+                                                        <rect key="frame" x="0.0" y="120" width="374" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="Zdn-de-e0M"/>
+                                                        </constraints>
+                                                        <string key="text">This is a Free Fall Detection Alert System designed to maximize your mobile phone ownership without monthly subscription fees. If an impact or accident is detected, your registered contacts will be notified via SMS and email.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="42x-vk-eIk" firstAttribute="top" secondItem="2I4-a5-3rm" secondAttribute="top" constant="70" id="Dj0-mK-ZGA"/>
+                                            <constraint firstItem="42x-vk-eIk" firstAttribute="leading" secondItem="2I4-a5-3rm" secondAttribute="leading" constant="20" id="Ms5-Ys-cEe"/>
+                                            <constraint firstAttribute="trailing" secondItem="42x-vk-eIk" secondAttribute="trailing" constant="20" id="xSl-Ke-RkA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSb-sS-8ZS">
+                                        <rect key="frame" x="0.0" y="681.5" width="414" height="170.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hq5-ce-NrD">
+                                                <rect key="frame" x="20" y="60.5" width="374" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="1Tj-a0-DPd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Okay, I understand">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnPressed:" destination="e9U-2r-wyc" eventType="touchUpInside" id="kJc-T5-yvO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hq5-ce-NrD" secondAttribute="trailing" constant="20" id="4I3-fK-p05"/>
+                                            <constraint firstItem="hq5-ce-NrD" firstAttribute="centerY" secondItem="sSb-sS-8ZS" secondAttribute="centerY" id="8fy-VX-cBf"/>
+                                            <constraint firstItem="hq5-ce-NrD" firstAttribute="centerX" secondItem="sSb-sS-8ZS" secondAttribute="centerX" id="Ybv-LK-ueB"/>
+                                            <constraint firstItem="hq5-ce-NrD" firstAttribute="leading" secondItem="sSb-sS-8ZS" secondAttribute="leading" constant="20" id="ZsC-Ly-SXQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2I4-a5-3rm" firstAttribute="width" secondItem="dqI-fY-bPg" secondAttribute="width" id="1Zd-Do-btw"/>
+                                    <constraint firstItem="2I4-a5-3rm" firstAttribute="height" secondItem="dqI-fY-bPg" secondAttribute="height" multiplier="0.8" id="2Su-4g-T1f"/>
+                                    <constraint firstItem="sSb-sS-8ZS" firstAttribute="leading" secondItem="dqI-fY-bPg" secondAttribute="leading" id="Ecb-bt-mqB"/>
+                                    <constraint firstAttribute="trailing" secondItem="sSb-sS-8ZS" secondAttribute="trailing" id="LrG-zA-h46"/>
+                                    <constraint firstAttribute="bottom" secondItem="sSb-sS-8ZS" secondAttribute="bottom" id="QFk-dy-tkD"/>
+                                    <constraint firstAttribute="trailing" secondItem="2I4-a5-3rm" secondAttribute="trailing" id="W7F-Id-1Ho"/>
+                                    <constraint firstItem="sSb-sS-8ZS" firstAttribute="height" secondItem="dqI-fY-bPg" secondAttribute="height" multiplier="0.2" id="Xon-nG-ePK"/>
+                                    <constraint firstItem="2I4-a5-3rm" firstAttribute="leading" secondItem="dqI-fY-bPg" secondAttribute="leading" id="beL-lz-dCh"/>
+                                    <constraint firstItem="sSb-sS-8ZS" firstAttribute="width" secondItem="dqI-fY-bPg" secondAttribute="width" id="loD-k1-tdp"/>
+                                    <constraint firstItem="2I4-a5-3rm" firstAttribute="top" secondItem="dqI-fY-bPg" secondAttribute="top" id="oUi-o3-23H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dqI-fY-bPg" secondAttribute="bottom" id="Tb9-wv-GRp"/>
+                            <constraint firstItem="dqI-fY-bPg" firstAttribute="trailing" secondItem="xjD-Hr-xvn" secondAttribute="trailing" id="ipp-eQ-9U5"/>
+                            <constraint firstItem="dqI-fY-bPg" firstAttribute="top" secondItem="xjD-Hr-xvn" secondAttribute="top" id="p2L-em-ulp"/>
+                            <constraint firstItem="dqI-fY-bPg" firstAttribute="leading" secondItem="xjD-Hr-xvn" secondAttribute="leading" id="q9Z-B2-Exp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjD-Hr-xvn"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="VAh-um-yDn" id="nDU-qo-2FD"/>
+                        <outlet property="mainButton" destination="hq5-ce-NrD" id="3UM-Yf-a1p"/>
+                        <outlet property="textViewInfo" destination="DbN-EQ-eV2" id="dW9-gI-1kx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQP-Su-qYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595.6521739130435" y="-925.44642857142856"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Fall02" width="100" height="100"/>
+    </resources>
 </document>

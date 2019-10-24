@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D50500E236183A100BCB81A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50500D236183A100BCB81A /* IntroViewController.swift */; };
 		1DA87F9A23616CCB00175B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87F9923616CCB00175B49 /* AppDelegate.swift */; };
 		1DA87F9C23616CCB00175B49 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87F9B23616CCB00175B49 /* RootViewController.swift */; };
 		1DA87F9E23616CCB00175B49 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87F9D23616CCB00175B49 /* DataViewController.swift */; };
@@ -14,9 +15,11 @@
 		1DA87FA323616CCB00175B49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA87FA123616CCB00175B49 /* Main.storyboard */; };
 		1DA87FA523616CCB00175B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA87FA423616CCB00175B49 /* Assets.xcassets */; };
 		1DA87FA823616CCB00175B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA87FA623616CCB00175B49 /* LaunchScreen.storyboard */; };
+		1DA87FB62361716B00175B49 /* FallDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87FB52361716B00175B49 /* FallDetectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D50500D236183A100BCB81A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		1DA87F9623616CCB00175B49 /* Fall Detection Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fall Detection Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA87F9923616CCB00175B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA87F9B23616CCB00175B49 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,9 @@
 		1DA87FA423616CCB00175B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DA87FA723616CCB00175B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DA87FA923616CCB00175B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DA87FB32361716B00175B49 /* Fall Detection Alert-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fall Detection Alert-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DA87FB42361716B00175B49 /* FallDetectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallDetectViewController.h; sourceTree = "<group>"; };
+		1DA87FB52361716B00175B49 /* FallDetectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallDetectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				1DA87F9823616CCB00175B49 /* Fall Detection Alert */,
-				1DA87F9923616CCB00175B49 /* AppDelegate.swift */,
 				1DA87F9723616CCB00175B49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,11 +64,12 @@
 		1DA87F9823616CCB00175B49 /* Fall Detection Alert */ = {
 			isa = PBXGroup;
 			children = (
-				1DA87FB123616D4200175B49 /* Controllers */,
+				1DA87F9923616CCB00175B49 /* AppDelegate.swift */,
+				1DA87FA923616CCB00175B49 /* Info.plist */,
 				1DA87FB023616D3B00175B49 /* View */,
+				1DA87FB123616D4200175B49 /* Controllers */,
 				1DA87FAF23616D1C00175B49 /* Page VC */,
 				1DA87FB223616D5000175B49 /* Support Files */,
-				1DA87FA923616CCB00175B49 /* Info.plist */,
 			);
 			path = "Fall Detection Alert";
 			sourceTree = "<group>";
@@ -90,6 +96,10 @@
 		1DA87FB123616D4200175B49 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1DA87FB32361716B00175B49 /* Fall Detection Alert-Bridging-Header.h */,
+				1DA87FB42361716B00175B49 /* FallDetectViewController.h */,
+				1DA87FB52361716B00175B49 /* FallDetectViewController.m */,
+				1D50500D236183A100BCB81A /* IntroViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -134,6 +144,7 @@
 				TargetAttributes = {
 					1DA87F9523616CCB00175B49 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -174,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA87F9C23616CCB00175B49 /* RootViewController.swift in Sources */,
+				1DA87FB62361716B00175B49 /* FallDetectViewController.m in Sources */,
 				1DA87FA023616CCB00175B49 /* ModelController.swift in Sources */,
+				1D50500E236183A100BCB81A /* IntroViewController.swift in Sources */,
 				1DA87F9E23616CCB00175B49 /* DataViewController.swift in Sources */,
 				1DA87F9A23616CCB00175B49 /* AppDelegate.swift in Sources */,
 			);
@@ -322,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FS5454LL5C;
 				INFOPLIST_FILE = "Fall Detection Alert/Info.plist";
@@ -331,6 +345,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ArkrayPHM.Fall-Detection-Alert";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fall Detection Alert/Controllers/Fall Detection Alert-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -340,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FS5454LL5C;
 				INFOPLIST_FILE = "Fall Detection Alert/Info.plist";
@@ -349,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ArkrayPHM.Fall-Detection-Alert";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fall Detection Alert/Controllers/Fall Detection Alert-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

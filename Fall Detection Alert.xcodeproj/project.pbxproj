@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2BD46A2366BF7000D728DF /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BD4692366BF7000D728DF /* DetectionViewController.swift */; };
 		1D50500E236183A100BCB81A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50500D236183A100BCB81A /* IntroViewController.swift */; };
 		1DA87F9A23616CCB00175B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87F9923616CCB00175B49 /* AppDelegate.swift */; };
 		1DA87F9C23616CCB00175B49 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87F9B23616CCB00175B49 /* RootViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2BD4692366BF7000D728DF /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
 		1D50500D236183A100BCB81A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		1DA87F9623616CCB00175B49 /* Fall Detection Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fall Detection Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA87F9923616CCB00175B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				1DA87FB42361716B00175B49 /* FallDetectViewController.h */,
 				1DA87FB52361716B00175B49 /* FallDetectViewController.m */,
 				1D50500D236183A100BCB81A /* IntroViewController.swift */,
+				1D2BD4692366BF7000D728DF /* DetectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				1DA87FB62361716B00175B49 /* FallDetectViewController.m in Sources */,
 				1DA87FA023616CCB00175B49 /* ModelController.swift in Sources */,
 				1D50500E236183A100BCB81A /* IntroViewController.swift in Sources */,
+				1D2BD46A2366BF7000D728DF /* DetectionViewController.swift in Sources */,
 				1DA87F9E23616CCB00175B49 /* DataViewController.swift in Sources */,
 				1DA87F9A23616CCB00175B49 /* AppDelegate.swift in Sources */,
 			);

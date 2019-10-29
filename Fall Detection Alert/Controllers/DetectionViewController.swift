@@ -10,6 +10,8 @@
 import UIKit
 import CoreMotion
 import CoreLocation
+import AVFoundation
+import AudioToolbox
 
 class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     
@@ -52,12 +54,23 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     var iAmOkayIndicator = true
     var introPresented = false
     
+    var player: AVAudioPlayer?
+    
     let manager = CMMotionManager()
     let locationManager = CLLocationManager()
     
     
+    @IBOutlet weak var btnDetection: UIButton!
+    @IBOutlet weak var sensorValues: UIStackView!
+    @IBOutlet weak var counterView: UIView!
+    @IBOutlet weak var counterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.btnDetection.layer.cornerRadius = 10
+        self.btnDetection.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
@@ -75,8 +88,6 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
         
     }
     
-    @IBOutlet weak var btnDetection: UIButton!
-    // Shadow and Radius for Circle Button
     
     @IBAction func switchDetection(_ sender: Any) {
         if btnDetection.titleLabel?.text == "Start Detection"{
@@ -99,20 +110,43 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
         if sender.isOn {
             switchLabel.text = "Fall Detection: ON"
             statusLabel.text = "STATUS: Monitoring . . ."
-            
             btnDetection.setTitle("Stop Detection", for: .normal)
             startDetection()
             
         } else {
             switchLabel.text = "Fall Detection: OFF"
             statusLabel.text = "Turn switch ON to monitor"
-            
             btnDetection.setTitle("Start Detection", for: .normal)
             stopDetection()
         }
         
     }
     
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "zapsplat_alarm_siren", withExtension: "mp3") else {
+            print("url not found")
+            return
+        }
+        
+        do {
+            /// this codes for making this app ready to takeover the device audio
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /// change fileTypeHint according to the type of your audio file (you can omit this)
+            
+            /// for iOS 11 onward, use :
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /// else :
+            /// player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3)
+            
+            // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
+            player!.play()
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
+    }
     
     
     func startDetection()  {
@@ -135,8 +169,10 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
                 if let myData = data
                 {
                     
-                    if  (abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)) >= 0.05 //6.25
+                    if  (abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)) >= 6.25 //6.25
                     {
+                        self.counterView.isHidden = false
+                        self.stopDetection()
                         print ((abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)))
                         //start the warning timer before confirming a fall
                         self.counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
@@ -155,15 +191,20 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     @objc func runTimedCode() {
         statusLabel.text = "STATUS: Fall Dectected \n calling contacts in \(counter)s"
         counter = counter - 1
-        
+        self.playSound()
+        self.counterLabel.text = "\(counter) seconds"
         if (counter == 0)
         {
-            self.counter = 10
             self.iAmOkayIndicator = false
-            
-            //push to fall detected view
             counterTimer.invalidate()
-            //self.redirecttoLoggedInView()
+           
+            if !iAmOkayIndicator {
+                self.introPresented = true
+                self.counter = 10
+                self.iAmOkayIndicator = true
+                let lvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "fallDetectedVC")
+                self.present(lvc, animated: true, completion: nil)
+            }
         }
     }
         

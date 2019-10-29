@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1AAABB23681044005C688C /* zapsplat_alarm_siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D1AAABA23681044005C688C /* zapsplat_alarm_siren.mp3 */; };
 		1D2BD46A2366BF7000D728DF /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BD4692366BF7000D728DF /* DetectionViewController.swift */; };
 		1D50500E236183A100BCB81A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50500D236183A100BCB81A /* IntroViewController.swift */; };
 		1DA87F9A23616CCB00175B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87F9923616CCB00175B49 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D1AAABA23681044005C688C /* zapsplat_alarm_siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zapsplat_alarm_siren.mp3; sourceTree = "<group>"; };
 		1D2BD4692366BF7000D728DF /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
 		1D50500D236183A100BCB81A /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		1DA87F9623616CCB00175B49 /* Fall Detection Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fall Detection Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 			children = (
 				1DA87F9923616CCB00175B49 /* AppDelegate.swift */,
 				1DA87FA923616CCB00175B49 /* Info.plist */,
+				1D1AAABA23681044005C688C /* zapsplat_alarm_siren.mp3 */,
 				1DA87FB023616D3B00175B49 /* View */,
 				1DA87FB123616D4200175B49 /* Controllers */,
 				1DA87FAF23616D1C00175B49 /* Page VC */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA87FA823616CCB00175B49 /* LaunchScreen.storyboard in Resources */,
+				1D1AAABB23681044005C688C /* zapsplat_alarm_siren.mp3 in Resources */,
 				1DA87FA523616CCB00175B49 /* Assets.xcassets in Resources */,
 				1DA87FA323616CCB00175B49 /* Main.storyboard in Resources */,
 			);

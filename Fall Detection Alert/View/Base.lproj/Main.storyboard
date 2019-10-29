@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAx-i8-Xyi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAx-i8-Xyi" customClass="CustomGradientView" customModule="Fall_Detection_Alert" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SjO-Z1-HCu">
@@ -29,7 +29,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fall02" translatesAutoresizingMaskIntoConstraints="NO" id="R2k-eW-lMg">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="AlQ-Ut-s1J"/>
                                                         </constraints>
@@ -55,7 +55,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="hjY-s1-feG" firstAttribute="leading" secondItem="SjO-Z1-HCu" secondAttribute="leading" constant="20" id="AUG-t5-RV6"/>
                                             <constraint firstItem="hjY-s1-feG" firstAttribute="top" secondItem="SjO-Z1-HCu" secondAttribute="top" constant="80" id="PJn-6q-Bs3"/>
@@ -67,7 +67,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gz-eK-hhl">
                                                 <rect key="frame" x="20" y="60.5" width="374" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.82138270550000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FT0-Lc-fhN"/>
                                                 </constraints>
@@ -80,7 +80,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Gz-eK-hhl" secondAttribute="trailing" id="8uX-gt-Lwz"/>
                                             <constraint firstItem="8Gz-eK-hhl" firstAttribute="leading" secondItem="t1A-bp-wX8" secondAttribute="leading" constant="20" id="fzg-iL-LsB"/>
@@ -102,9 +102,17 @@
                                     <constraint firstItem="t1A-bp-wX8" firstAttribute="width" secondItem="aAx-i8-Xyi" secondAttribute="width" id="lhO-Tj-mxn"/>
                                     <constraint firstItem="t1A-bp-wX8" firstAttribute="height" secondItem="aAx-i8-Xyi" secondAttribute="height" multiplier="0.2" id="xKo-px-S3U"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="0.82138270550000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aAx-i8-Xyi" firstAttribute="leading" secondItem="02d-oB-bf9" secondAttribute="leading" id="GK9-RH-whe"/>
                             <constraint firstAttribute="bottom" secondItem="aAx-i8-Xyi" secondAttribute="bottom" id="aCh-PO-Km4"/>
@@ -180,7 +188,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-fY-bPg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqI-fY-bPg" customClass="CustomGradientView" customModule="Fall_Detection_Alert" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2I4-a5-3rm">
@@ -191,25 +199,26 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fall02" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-um-yDn">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="KEl-C8-Xj6"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbN-EQ-eV2">
                                                         <rect key="frame" x="0.0" y="120" width="374" height="200"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="Zdn-de-e0M"/>
                                                         </constraints>
                                                         <string key="text">This is a Free Fall Detection Alert System designed to maximize your mobile phone ownership without monthly subscription fees. If an impact or accident is detected, your registered contacts will be notified via SMS and email.</string>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="42x-vk-eIk" firstAttribute="top" secondItem="2I4-a5-3rm" secondAttribute="top" constant="70" id="Dj0-mK-ZGA"/>
                                             <constraint firstItem="42x-vk-eIk" firstAttribute="leading" secondItem="2I4-a5-3rm" secondAttribute="leading" constant="20" id="Ms5-Ys-cEe"/>
@@ -221,7 +230,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hq5-ce-NrD">
                                                 <rect key="frame" x="20" y="60.5" width="374" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.82138270550000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="1Tj-a0-DPd"/>
                                                 </constraints>
@@ -234,7 +243,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="hq5-ce-NrD" secondAttribute="trailing" constant="20" id="4I3-fK-p05"/>
                                             <constraint firstItem="hq5-ce-NrD" firstAttribute="centerY" secondItem="sSb-sS-8ZS" secondAttribute="centerY" id="8fy-VX-cBf"/>
@@ -256,9 +265,17 @@
                                     <constraint firstItem="sSb-sS-8ZS" firstAttribute="width" secondItem="dqI-fY-bPg" secondAttribute="width" id="loD-k1-tdp"/>
                                     <constraint firstItem="2I4-a5-3rm" firstAttribute="top" secondItem="dqI-fY-bPg" secondAttribute="top" id="oUi-o3-23H"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="0.82138270550000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="dqI-fY-bPg" secondAttribute="bottom" id="Tb9-wv-GRp"/>
                             <constraint firstItem="dqI-fY-bPg" firstAttribute="trailing" secondItem="xjD-Hr-xvn" secondAttribute="trailing" id="ipp-eQ-9U5"/>
@@ -285,7 +302,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmC-n1-Upe">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmC-n1-Upe" customClass="CustomGradientView" customModule="Fall_Detection_Alert" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngT-F9-F6H">
@@ -299,7 +316,7 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fall02" translatesAutoresizingMaskIntoConstraints="NO" id="y8v-Fe-2Pi">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="7xK-xZ-W1G"/>
                                                                 </constraints>
@@ -310,7 +327,7 @@
                                                                     <constraint firstAttribute="height" constant="38" id="Wkm-oR-crx"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="elg-WD-D2J">
@@ -319,6 +336,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall Detection: OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-aQ-i64">
                                                                         <rect key="frame" x="0.0" y="183.5" width="270.5" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H4e-ep-cdz">
@@ -440,7 +458,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="fwW-lC-RU6" firstAttribute="centerY" secondItem="4ix-XF-pmj" secondAttribute="centerY" id="3Uy-6s-LxM"/>
                                                             <constraint firstAttribute="trailing" secondItem="fwW-lC-RU6" secondAttribute="trailing" constant="20" id="H6a-aT-5za"/>
@@ -463,7 +481,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="5aY-bi-0DE" secondAttribute="bottom" constant="89" id="HD6-Xf-Vom"/>
                                             <constraint firstItem="5aY-bi-0DE" firstAttribute="top" secondItem="ngT-F9-F6H" secondAttribute="top" constant="20" id="Q2F-Di-Fc7"/>
@@ -476,7 +494,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UR3-vT-KaW">
                                                 <rect key="frame" x="20" y="56.5" width="374" height="50"/>
-                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.82138270550000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WQJ-MD-kjd"/>
                                                 </constraints>
@@ -489,7 +507,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="UR3-vT-KaW" firstAttribute="centerX" secondItem="iMl-h7-lAp" secondAttribute="centerX" id="UDu-DS-yFb"/>
                                             <constraint firstItem="UR3-vT-KaW" firstAttribute="centerY" secondItem="iMl-h7-lAp" secondAttribute="centerY" id="oye-eA-jOg"/>
@@ -510,6 +528,14 @@
                                     <constraint firstAttribute="trailing" secondItem="iMl-h7-lAp" secondAttribute="trailing" id="blP-Tt-Ohe"/>
                                     <constraint firstItem="ngT-F9-F6H" firstAttribute="height" secondItem="mmC-n1-Upe" secondAttribute="height" multiplier="0.8" id="e2k-U5-TKW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="0.3241652397260274" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

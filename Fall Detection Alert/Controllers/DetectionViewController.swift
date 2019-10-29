@@ -95,9 +95,13 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
             startDetection()
             self.switchBtnOutlet.setOn(true, animated: true)
         }else{
-            if !iAmOkayIndicator {
+            if iAmOkayIndicator {
                 counterTimer.invalidate()
+                self.counterLabel.isHidden = true
+                self.player?.pause()
+                self.player?.stop()
             }
+
             btnDetection.setTitle("Start Detection", for: .normal)
             stopDetection()
             self.switchBtnOutlet.setOn(false, animated: true)
@@ -123,7 +127,7 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     }
     
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "zapsplat_alarm_siren", withExtension: "mp3") else {
+        guard let url = Bundle.main.url(forResource: "zapsplat_alarm_siren01", withExtension: "mp3") else {
             print("url not found")
             return
         }

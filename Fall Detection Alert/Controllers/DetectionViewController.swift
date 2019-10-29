@@ -13,6 +13,13 @@ import CoreLocation
 
 class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     
+    //View Labels
+    @IBOutlet weak var fallImageView: UIImageView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var switchLabel: UILabel!
+    @IBOutlet weak var switchBtnOutlet: UISwitch!
+    
+    //Sensor Values
     @IBOutlet weak var accX: UILabel!
     @IBOutlet weak var accY: UILabel!
     @IBOutlet weak var accZ: UILabel!
@@ -40,22 +47,60 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     var rotY_measure : Double = 0
     var rotZ_measure : Double = 0
     
+    var counter = 10
+    var counterTimer : Timer!
+    var iAmOkayIndicator = true
+    
     let manager = CMMotionManager()
     let locationManager = CLLocationManager()
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+    }
     
     @IBOutlet weak var btnDetection: UIButton!
     // Shadow and Radius for Circle Button
     
     @IBAction func switchDetection(_ sender: Any) {
+        
         if btnDetection.titleLabel?.text == "Start Detection"{
             btnDetection.setTitle("Stop Detection", for: .normal)
             startDetection()
         }else{
+            if !iAmOkayIndicator {
+                counterTimer.invalidate()
+            }
             btnDetection.setTitle("Start Detection", for: .normal)
             stopDetection()
         }
     }
+    
+    
+    @IBAction func detectionSwitchTapped(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            switchLabel.text = "Fall Detection: ON"
+            statusLabel.text = "STATUS: Monitoring . . ."
+            
+            btnDetection.setTitle("Stop Detection", for: .normal)
+            startDetection()
+            
+        } else {
+            switchLabel.text = "Fall Detection: OFF"
+            statusLabel.text = "Turn switch ON to monitor"
+            
+            btnDetection.setTitle("Start Detection", for: .normal)
+            stopDetection()
+        }
+        
+    }
+    
+    
+    
     func startDetection()  {
         self.resetValues()
 
@@ -70,14 +115,46 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
                     print("\(String(describing: NSError))")
                 }
             } )
-
+            
+            manager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
+                
+                if let myData = data
+                {
+                    
+                    if  (abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)) >= 0.05 //6.25
+                    {
+                        print ((abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)))
+                        //start the warning timer before confirming a fall
+                        self.counterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
+                    }
+                }
+            }
         }
+        
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
     }
+    
+    @objc func runTimedCode() {
+        statusLabel.text = "STATUS: Fall Dectected \n calling contacts in \(counter)s"
+        counter = counter - 1
+        
+        if (counter == 0)
+        {
+            self.counter = 10
+            self.iAmOkayIndicator = false
+            
+            //push to fall detected view
+            counterTimer.invalidate()
+            //self.redirecttoLoggedInView()
+        }
+    }
+        
+        
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
@@ -86,6 +163,7 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
         cordsY?.text = "\(locValue.longitude)"
 
     }
+    
     func stopDetection(){
         manager.stopDeviceMotionUpdates()
         self.resetValues()
@@ -133,19 +211,6 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
         gX?.text = "gx:\(NSString .localizedStringWithFormat("%.4f", gX_measure)) g-force"
         gY?.text = "gy:\(NSString .localizedStringWithFormat("%.4f", gY_measure)) g-force"
         gZ?.text = "gz:\(NSString .localizedStringWithFormat("%.4f", gZ_measure)) g-force"
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        btnDetection.layer.shadowColor = UIColor.black.cgColor
-        btnDetection.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        btnDetection.layer.masksToBounds = false
-        btnDetection.layer.shadowRadius = 1.0
-        btnDetection.layer.shadowOpacity = 0.5
-        btnDetection.layer.cornerRadius = btnDetection.frame.width / 2
-        // Do any additional setup after loading the view.
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
     }
     
 }

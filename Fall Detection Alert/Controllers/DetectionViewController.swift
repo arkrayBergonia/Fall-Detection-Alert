@@ -50,6 +50,7 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
     var counter = 10
     var counterTimer : Timer!
     var iAmOkayIndicator = true
+    var introPresented = false
     
     let manager = CMMotionManager()
     let locationManager = CLLocationManager()
@@ -62,20 +63,33 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
         self.locationManager.requestWhenInUseAuthorization()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !introPresented {
+            //let vc = IntroViewController()
+            let lvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IntroVC")
+            self.present(lvc, animated: true, completion: nil)
+            self.introPresented = true
+        }
+        
+    }
+    
     @IBOutlet weak var btnDetection: UIButton!
     // Shadow and Radius for Circle Button
     
     @IBAction func switchDetection(_ sender: Any) {
-        
         if btnDetection.titleLabel?.text == "Start Detection"{
             btnDetection.setTitle("Stop Detection", for: .normal)
             startDetection()
+            self.switchBtnOutlet.setOn(true, animated: true)
         }else{
             if !iAmOkayIndicator {
                 counterTimer.invalidate()
             }
             btnDetection.setTitle("Start Detection", for: .normal)
             stopDetection()
+            self.switchBtnOutlet.setOn(false, animated: true)
         }
     }
     

@@ -95,13 +95,12 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
             startDetection()
             self.switchBtnOutlet.setOn(true, animated: true)
         }else{
-            if iAmOkayIndicator {
-                counterTimer.invalidate()
-                self.counterLabel.isHidden = true
-                self.player?.pause()
-                self.player?.stop()
+            if !iAmOkayIndicator {
+               self.counterTimer.invalidate()
             }
-
+            self.counterLabel.isHidden = true
+            self.player?.pause()
+            self.player?.stop()
             btnDetection.setTitle("Start Detection", for: .normal)
             stopDetection()
             self.switchBtnOutlet.setOn(false, animated: true)
@@ -175,6 +174,7 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
                     
                     if  (abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)) >= 6.25 //6.25
                     {
+                        self.iAmOkayIndicator = false
                         self.counterView.isHidden = false
                         self.stopDetection()
                         print ((abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)))
@@ -199,7 +199,6 @@ class DetectionViewController: UIViewController ,CLLocationManagerDelegate{
         self.counterLabel.text = "\(counter) seconds"
         if (counter == 0)
         {
-            self.iAmOkayIndicator = false
             counterTimer.invalidate()
            
             if !iAmOkayIndicator {

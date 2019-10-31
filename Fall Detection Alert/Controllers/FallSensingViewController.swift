@@ -11,13 +11,13 @@ import CoreMotion
 
 class FallSensingViewController: UIViewController {
 
-    var introPresented = false
+    @IBOutlet weak var mainButton: RoundedButton!
     
+    var introPresented = false
     let manager = CMMotionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

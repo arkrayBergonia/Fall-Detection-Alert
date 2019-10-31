@@ -40,14 +40,30 @@ class FallDetectedViewController: UIViewController {
         self.player?.stop()
     }
     
+    @IBAction func mainBtnTapped(_ sender: Any) {
+        if mainButton.titleLabel?.text == "Cancel it, I'm Okay"{
+            mainButton.setTitle("Dismiss", for: .normal)
+            self.statusLabel.text = "Emergency Alert Stopped"
+            self.textView.text = "Press dismiss button below to go back"
+            mainButton.backgroundColor = UIColor.red
+            counter = 0
+            counterTimer.invalidate()
+            self.player?.volume = 0.0
+            self.player?.stop()
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    
+    
     @objc func runTimedCode() {
         //statusLabel.text = "STATUS: Fall Dectected \n calling contacts in \(counter)s"
         counter = counter - 1
         self.playSound()
-        //self.counterLabel.text = "\(counter) seconds"
+        self.counterLabel.text = "\(counter) secs"
         if (counter == 0) {
             counterTimer.invalidate()
-            self.counter = 10
             self.player?.volume = 0.0
             self.player?.stop()
 //            let lvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "fallDetectedVC")

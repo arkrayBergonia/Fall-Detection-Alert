@@ -38,12 +38,26 @@ class FallSensingViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    func startDetection()  {
+    @IBAction func mainBtnTapped(_ sender: Any) {
+        if mainButton.titleLabel?.text == "Start Detection"{
+            mainButton.setTitle("Stop Detection", for: .normal)
+            mainButton.backgroundColor = UIColor.orange
+            self.statusLabel.text = "STATUS: Monitoring"
+            startDetection()
+        } else {
+            mainButton.setTitle("Start Detection", for: .normal)
+            mainButton.backgroundColor = UIColor.red
+            self.statusLabel.text = "STATUS: OFF "
+            stopDetection()
+        }
+    }
+    
+    private func startDetection()  {
         if manager.isDeviceMotionAvailable{
             manager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, error) in
                 if let myData = data {
                     
-                    if  (abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)) >= 6.25 {
+                    if  (abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)) >= 4.25 {
                         
                         print ((abs(myData.acceleration.x) + abs(myData.acceleration.y) + abs(myData.acceleration.z)))
                         let lvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "fallDetectedVC")
@@ -55,4 +69,7 @@ class FallSensingViewController: UIViewController {
     }
     
 
+    private func stopDetection(){
+        manager.stopDeviceMotionUpdates()
+    }
 }

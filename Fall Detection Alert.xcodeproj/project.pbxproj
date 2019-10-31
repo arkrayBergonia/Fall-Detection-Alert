@@ -22,7 +22,6 @@
 		1DA87FA323616CCB00175B49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA87FA123616CCB00175B49 /* Main.storyboard */; };
 		1DA87FA523616CCB00175B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA87FA423616CCB00175B49 /* Assets.xcassets */; };
 		1DA87FA823616CCB00175B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA87FA623616CCB00175B49 /* LaunchScreen.storyboard */; };
-		1DA87FB62361716B00175B49 /* FallDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA87FB52361716B00175B49 /* FallDetectViewController.m */; };
 		1DC17CB8236A6E7E00D01477 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC17CB7236A6E7E00D01477 /* CircleView.swift */; };
 		1DC17CBA236A840800D01477 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC17CB9236A840800D01477 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
@@ -46,8 +45,6 @@
 		1DA87FA723616CCB00175B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DA87FA923616CCB00175B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DA87FB32361716B00175B49 /* Fall Detection Alert-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fall Detection Alert-Bridging-Header.h"; sourceTree = "<group>"; };
-		1DA87FB42361716B00175B49 /* FallDetectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallDetectViewController.h; sourceTree = "<group>"; };
-		1DA87FB52361716B00175B49 /* FallDetectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallDetectViewController.m; sourceTree = "<group>"; };
 		1DC17CB7236A6E7E00D01477 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		1DC17CB9236A840800D01477 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				1DA87FB32361716B00175B49 /* Fall Detection Alert-Bridging-Header.h */,
-				1DA87FB42361716B00175B49 /* FallDetectViewController.h */,
-				1DA87FB52361716B00175B49 /* FallDetectViewController.m */,
 				1D50500D236183A100BCB81A /* IntroViewController.swift */,
 				1D2BD4692366BF7000D728DF /* DetectionViewController.swift */,
 				1D8C58BD23690CDF005C0FDB /* FallDetectedViewController.swift */,
@@ -216,7 +211,6 @@
 			files = (
 				1DA87F9C23616CCB00175B49 /* RootViewController.swift in Sources */,
 				1D8C58C023692A1E005C0FDB /* FallSensingViewController.swift in Sources */,
-				1DA87FB62361716B00175B49 /* FallDetectViewController.m in Sources */,
 				1D8C58BE23690CDF005C0FDB /* FallDetectedViewController.swift in Sources */,
 				1DA87FA023616CCB00175B49 /* ModelController.swift in Sources */,
 				1D50500E236183A100BCB81A /* IntroViewController.swift in Sources */,

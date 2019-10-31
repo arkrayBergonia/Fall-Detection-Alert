@@ -12,9 +12,14 @@ import AudioToolbox
 
 class FallDetectedViewController: UIViewController {
     
+    @IBOutlet var imageView: UIView!
+    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var mainButton: RoundedButton!
+    
     var counter = 10
     var counterTimer : Timer!
-    
     var player: AVAudioPlayer?
     
     override func viewDidLoad() {

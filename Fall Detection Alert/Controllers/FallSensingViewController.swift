@@ -11,6 +11,9 @@ import CoreMotion
 
 class FallSensingViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var mainButton: RoundedButton!
     
     var introPresented = false
